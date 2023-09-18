@@ -1,23 +1,28 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
-
-
-const SearchBar = () => {
-  const [searchText, setSearchText] = useState("");
+const SearchBar = (props) => {
+  const [searchText, setSearchText] = useState('');
 
   const handleChange = (e) => {
     setSearchText(e.target.value);
-    
-  }
+  };
+
   useEffect(() => {
-    alert(setSearchText)
-  }, [searchText])
+    props.onSearchChange(searchText);
+  }, [searchText]);
 
   return (
     <>
-      <input className='' type="text" onChange={handleChange} value={searchText} />
+      <div className="">
+        <input type="text" placeholder='search...' value={searchText} onChange={handleChange} />
+      </div>
+      {/* <div className='hidden'>
+        <Countries text={searchText} />
+      </div> */}
     </>
-  )
-}
+  );
+};
 
-export default SearchBar
+export default SearchBar;
+
+// https://restcountries.com/v3.1/name/{name}
