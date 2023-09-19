@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import Country from './Country'
 import SearchBar from './SearchBar'
 
-const Countries = (props) => {
+const Countries = () => {
   const [countries, setCountries] = useState([])
   const [filterCountries, setFilterCountries] = useState(countries)
 
@@ -13,7 +13,6 @@ const Countries = (props) => {
       return cName.startsWith(todosLower);
     })
     setFilterCountries(newCountries)
-
   }
 
   useEffect(()=> {
@@ -27,8 +26,7 @@ const Countries = (props) => {
       <SearchBar onSearchChange={handleText} />
     </div>
       <div className="grid grid-cols-3">
-        {
-          filterCountries.map((country) => <Country key={country.name.common} country={country} />)
+        {filterCountries.length === 0 ? countries.map(country => <Country country={country} />) : filterCountries.map(country => <Country country={country} />)
         }
       </div>
     </>
