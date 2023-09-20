@@ -2,6 +2,8 @@ import {useState, useEffect} from 'react'
 import Country from './Country'
 import SearchBar from './SearchBar'
 
+import { v4 as uuidv4 } from 'uuid';
+
 const Countries = () => {
   const [countries, setCountries] = useState([])
   const [filterCountries, setFilterCountries] = useState(countries)
@@ -27,7 +29,7 @@ const Countries = () => {
       <SearchBar className='w-full' onSearchChange={handleText} />
     </div>
       <div className="grid grid-cols-3">
-        {filterCountries.length === 0 ? countries.map(country => <Country country={country} />) : filterCountries.map(country => <Country key={country.id} country={country} />)
+        {filterCountries.length === 0 ? countries.map(country => <Country country={country} />) : filterCountries.map(country => <Country key={uuidv4()} country={country} />)
         }
       </div>
     </>
