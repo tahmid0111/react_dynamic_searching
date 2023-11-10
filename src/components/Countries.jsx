@@ -9,12 +9,14 @@ const Countries = () => {
   const [filterCountries, setFilterCountries] = useState(countries)
 
   const handleText = (todos) => {
+
     const todosLower = todos.toLowerCase();
     const newCountries = countries.filter((c) => {
       let cName = c.name.common.toLowerCase();
       return cName.startsWith(todosLower);
     })
     setFilterCountries(newCountries)
+    
   }
 
   useEffect(()=> {
