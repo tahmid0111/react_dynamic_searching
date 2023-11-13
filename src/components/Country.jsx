@@ -9,6 +9,7 @@ const Country = (props) => {
       <div className="m-20">
           <img className='w-96 h-40' src={flags.png} alt="flag" />
           <h1>{name.common}</h1>
+          <h1>github</h1>
       </div>
     </>
   )
