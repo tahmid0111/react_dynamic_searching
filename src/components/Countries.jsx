@@ -31,7 +31,7 @@ const Countries = () => {
       <SearchBar className='w-full' onSearchChange={handleText} />
     </div>
       <div className="grid grid-cols-3">
-        {filterCountries.length === 0 ? countries.map(country => <Country country={country} />) : filterCountries.map(country => <Country key={uuidv4()} country={country} />)
+        {filterCountries.length === 0 ? countries.map(country => <Country key={uuidv4()} country={country} />) : filterCountries.map(country => <Country key={uuidv4()} country={country} />)
         }
       </div>
     </>
