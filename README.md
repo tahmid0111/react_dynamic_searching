@@ -1,4 +1,6 @@
-# React + Vite + tailwind css
+# React Dynamic Searching Project
+
+## I tried dynamic searching in react for the first time
 
 I just tried to make a simple e-commerce project.
 
